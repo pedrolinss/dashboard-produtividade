@@ -1,7 +1,48 @@
 data,atividade,categoria,horas,status
-2026-09-09,Documentação,Projeto,1.5,Concluído
-2026-09-09,Estudo de Python,Estudo,1.0,Concluído
-2026-09-09,Reunião,Reunião,0.5,Concluído
-2026-09-09,Desenvolvimento do dashboard,Desenvolvimento,2.0,Em andamento
-2026-09-08,Leitura de documentação,Projeto,1.0,Concluído
+2026-08-20,Documentação,Projeto,1.5,Concluído
+2026-08-20,Estudo de Python,Estudo,0.5,Concluído
+2026-08-20,Atualização de documentação,Administrativo,0.5,Concluído
+2026-08-20,Documentação,Projeto,1.0,Concluído
+2026-08-21,Estudo de pandas,Estudo,2.0,Concluído
+2026-08-21,Implementação de funcionalidade,Desenvolvimento,1.5,Concluído
+2026-08-21,Estudo de pandas,Estudo,2.0,Concluído
+2026-08-21,Reunião de alinhamento,Reunião,1.0,Concluído
+2026-08-24,Revisão de requisitos,Projeto,0.5,Concluído
+2026-08-24,Reunião de acompanhamento,Reunião,0.5,Em andamento
+2026-08-25,Revisão de requisitos,Projeto,0.5,Concluído
+2026-08-25,Atualização de documentação,Administrativo,1.0,Concluído
+2026-08-25,Planejamento de atividades,Projeto,1.0,Concluído
+2026-08-25,Documentação,Projeto,0.5,Em andamento
+2026-08-26,Implementação de funcionalidade,Desenvolvimento,1.5,Concluído
+2026-08-26,Reunião de acompanhamento,Reunião,1.0,Concluído
+2026-08-26,Planejamento de atividades,Projeto,1.0,Concluído
+2026-08-27,Correção de código,Desenvolvimento,1.5,Concluído
+2026-08-27,Reunião de alinhamento,Reunião,1.0,Concluído
+2026-08-28,Correção de código,Desenvolvimento,0.5,Concluído
+2026-08-28,Atualização de documentação,Administrativo,1.0,Em andamento
+2026-08-28,Implementação de funcionalidade,Desenvolvimento,2.0,Concluído
+2026-08-31,Estudo de Python,Estudo,1.5,Em andamento
+2026-08-31,Atualização de documentação,Administrativo,1.5,Concluído
+2026-08-31,Estudo de pandas,Estudo,2.0,Concluído
+2026-09-01,Documentação,Projeto,1.0,Em andamento
+2026-09-01,Organização de tarefas,Administrativo,2.0,Em andamento
+2026-09-02,Implementação de funcionalidade,Desenvolvimento,1.5,Concluído
+2026-09-02,Planejamento de atividades,Projeto,1.5,Concluído
+2026-09-02,Revisão de requisitos,Projeto,2.0,Concluído
+2026-09-02,Desenvolvimento do dashboard,Desenvolvimento,1.5,Concluído
+2026-09-03,Planejamento de atividades,Projeto,1.5,Concluído
+2026-09-03,Leitura de documentação,Estudo,1.0,Concluído
+2026-09-03,Atualização de documentação,Administrativo,2.0,Concluído
+2026-09-03,Revisão de requisitos,Projeto,1.5,Concluído
+2026-09-04,Estudo de pandas,Estudo,0.5,Concluído
+2026-09-04,Desenvolvimento do dashboard,Desenvolvimento,1.0,Concluído
+2026-09-07,Implementação de funcionalidade,Desenvolvimento,1.0,Concluído
+2026-09-07,Atualização de documentação,Administrativo,1.0,Concluído
+2026-09-07,Reunião de acompanhamento,Reunião,1.5,Em andamento
+2026-09-07,Atualização de documentação,Administrativo,0.5,Concluído
+2026-09-08,Revisão de requisitos,Projeto,0.5,Concluído
 2026-09-08,Organização de tarefas,Administrativo,0.5,Concluído
+2026-09-09,Documentação,Projeto,0.5,Concluído
+2026-09-09,Reunião de alinhamento,Reunião,1.0,Concluído
+2026-09-09,Desenvolvimento do dashboard,Desenvolvimento,1.0,Em andamento
+2026-09-09,Leitura de documentação,Estudo,2.0,Concluído
