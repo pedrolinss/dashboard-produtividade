@@ -13,6 +13,10 @@ st.caption(
     "Acompanhe atividades, horas registradas e evolução da produtividade ao longo do tempo."
 )
 
+if st.session_state.get("atividade_registrada"):
+    st.success("Atividade registrada com sucesso.")
+    st.session_state["atividade_registrada"] = False
+
 dados = pd.read_csv("data/atividades.csv")
 
 dados["data"] = pd.to_datetime(dados["data"])
@@ -46,10 +50,81 @@ periodo = st.sidebar.date_input(
     max_value=data_final
 )
 
+st.sidebar.divider()
+st.sidebar.subheader("Nova atividade")
+
+with st.sidebar.form(
+    "form_nova_atividade",
+    clear_on_submit=True
+):
+    nova_data = st.date_input(
+        "Data da atividade",
+        value=pd.Timestamp.today().date()
+    )
+
+    nova_atividade = st.text_input(
+        "Atividade"
+    )
+
+    nova_categoria = st.selectbox(
+        "Categoria",
+        categorias
+    )
+
+    novas_horas = st.number_input(
+        "Horas",
+        min_value=0.5,
+        max_value=12.0,
+        value=1.0,
+        step=0.5
+    )
+
+    novo_status = st.selectbox(
+        "Status",
+        ["Concluído", "Em andamento"]
+    )
+
+    registrar = st.form_submit_button(
+        "Registrar atividade"
+    )
+
+if registrar:
+    if not nova_atividade.strip():
+        st.sidebar.error("Informe o nome da atividade.")
+
+    else:
+        novo_registro = pd.DataFrame([
+            {
+                "data": pd.to_datetime(nova_data),
+                "atividade": nova_atividade.strip(),
+                "categoria": nova_categoria,
+                "horas": novas_horas,
+                "status": novo_status,
+            }
+        ])
+
+        dados_atualizados = pd.concat(
+            [dados, novo_registro],
+            ignore_index=True
+        )
+
+        dados_atualizados.to_csv(
+            "data/atividades.csv",
+            index=False,
+            date_format="%Y-%m-%d"
+        )
+
+        st.session_state["atividade_registrada"] = True
+        st.rerun()
+
 # Aplica os filtros
 
-inicio = pd.to_datetime(periodo[0])
-fim = pd.to_datetime(periodo[1])
+if len(periodo) == 2:
+    inicio = pd.to_datetime(periodo[0])
+    fim = pd.to_datetime(periodo[1])
+else:
+    inicio = pd.to_datetime(periodo[0])
+    fim = inicio
 
 dados_filtrados = dados[
     dados["categoria"].isin(categorias_selecionadas)
@@ -57,6 +132,10 @@ dados_filtrados = dados[
     & (dados["data"] >= inicio)
     & (dados["data"] <= fim)
 ]
+
+if dados_filtrados.empty:
+    st.warning("Nenhuma atividade encontrada para os filtros selecionados.")
+    st.stop()
 
 # KPIs
 total_horas = dados_filtrados["horas"].sum()
@@ -124,6 +203,17 @@ dados_exibicao = dados_exibicao.rename(
         "horas": "Horas",
         "status": "Status",
     }
+)
+
+csv_filtrado = dados_exibicao.to_csv(
+    index=False
+).encode("utf-8-sig")
+
+st.download_button(
+    label="Baixar dados filtrados",
+    data=csv_filtrado,
+    file_name="atividades_filtradas.csv",
+    mime="text/csv"
 )
 
 st.dataframe(
